@@ -1,0 +1,36 @@
+name: Windows CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Java
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+
+    - name: Install Maven
+      run: |
+        choco install maven -y
+        mvn -version
+
+    - name: Run Tests
+      run: mvn clean test
+
+    - name: Upload Extent Report
+      uses: actions/upload-artifact@v3
+      with:
+        name: ExtentReport
+        path: reports/ExtentReport.html
