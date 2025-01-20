@@ -1,1 +1,56 @@
+# IDE-specific files
+.idea/
+*.iml
+.vscode/
+.project
+.classpath
+.settings/
+
+# Build and compilation artifacts
 /target/
+/bin/
+/build/
+/out/
+*.class
+*.jar
+*.war
+*.ear
+
+# Logs and reports
+*.log
+logs/
+reports/
+*.xml
+*.html
+*.json
+screenshots/
+
+# Configuration files
+.env
+config.properties
+secrets.json
+
+# Dependency directories
+.mvn/
+.gradle/
+/node_modules/
+!pom.xml
+build.gradle
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Tool-specific files
+selenium-logs/
+chromedriver.log
+appium-logs/
+.cucumber/
+*.apk
+*.ipa
+
+# CI/CD specific files
+pipeline-logs/
+ci-output/
+build-info/
